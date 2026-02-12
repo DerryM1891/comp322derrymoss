@@ -4,14 +4,36 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Index - My Bio</title>
+
+  <style>
+    button {
+            background-color: #002D74;
+            color: white;
+            padding: 12px 30px;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            margin: 10px 5px;
+            font-weight: bold;
+            text-decoration: none;
+        }
+
+    button:hover {
+            background-color: #022761;
+    }
+        
+  </style>
 </head>
+
+
 <body>
   <h1>Welcome to My Homepage</h1>
 
   <h2>Short Bio</h2>
   <p>
-    My name is Derry C. Moss III. I am a sophomore Honors Computer Science
-     student at thee North Carolina Agricultural & Technical State University with a
+    My name is Derry C. Moss III. I am a Second-Year Junior Honors Computer Science
+     student at <span style="font-style: italic; font-weight: 600; color: gold">The Illustrious </span> North Carolina Agricultural & Technical State University with a
       concentration in Cybersecurity from Atlanta, Georgia. I am passionate about technology, 
       problem-solving, and software development, and I enjoy applying what 
       I learn through projects, hackathons, and hands-on experiences. I am 
@@ -34,7 +56,20 @@
   </ul>
 
   <p>
-    <a href="introduction.html">Go to my Introduction Page</a>
+    <button>
+    <a href="introduction.html" style = "text-decoration: none; color: white">Go To My Introduction Page</a>
+    </button>
+    <br>
+
+    <button>
+    <a href="little_prince.html" style = "text-decoration: none; color: white">Read The Little Prince</a>
+    </button>
+    <br>
+
+    <button>
+    <a href="calculator.html" style = "text-decoration: none; color: white">The Almighty Calculator</a>
+    </button>
+
   </p>
 </body>
 </html>
