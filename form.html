@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 900px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+
+        .form-container {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .form-inner {
+            border: 2px solid #333;
+            padding: 25px 40px;
+            border-radius: 6px;
+            background: #fff;
+        }
+
+        .input-group {
+            margin: 14px 0;
+            display: flex;
+            align-items: center;
+        }
+
+        label {
+            display: inline-block;
+            width: 170px;
+            text-align: right;
+            margin-right: 10px;
+            font-size: 15px;
+            color: #333;
+        }
+
+        input[type="text"],
+        input[type="password"],
+        select {
+            padding: 6px 10px;
+            border: 1px solid #aaa;
+            border-radius: 3px;
+            font-size: 15px;
+            width: 180px;
+        }
+
+        input[type="text"]:focus,
+        input[type="password"]:focus,
+        select:focus {
+            outline: none;
+            border-color: #FDB827;
+        }
+
+        .radio-group,
+        .checkbox-group {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            flex-wrap: wrap;
+        }
+
+        .radio-group label,
+        .checkbox-group label {
+            width: auto;
+            text-align: left;
+            margin-right: 0;
+            font-weight: normal;
+        }
+
+        .button-group {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        button {
+            background-color: #002D74;
+            color: white;
+            padding: 8px 20px;
+            border: none;
+            border-radius: 4px;
+            font-size: 15px;
+            cursor: pointer;
+            margin: 5px;
+            font-weight: bold;
+        }
+
+        button:hover {
+            background-color: #022761;
+        }
+
+        button.clear-btn {
+            background-color: #555;
+        }
+
+        button.clear-btn:hover {
+            background-color: #333;
+        }
+
+        #error-box {
+            margin-top: 20px;
+            padding: 15px 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            background: #fff;
+            display: none;
+        }
+
+        #error-box p {
+            margin: 6px 0;
+            font-size: 15px;
+        }
+
+        .nav-button {
+            display: inline-block;
+            margin-top: 20px;
+        }
+
+        .nav-button a {
+            text-decoration: none;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <div class="form-container">
+        <h1><b><i>Registration Form</i></b></h1>
+
+        <div class="form-inner" id="mainForm">
+
+            <div class="input-group">
+                <label for="username">Username:</label>
+                <input type="text" id="username" placeholder="Enter Username">
+            </div>
+
+            <div class="input-group">
+                <label for="email">Email:</label>
+                <input type="text" id="email" placeholder="Enter Email">
+            </div>
+
+            <div class="input-group">
+                <label for="phone">Phone Number:</label>
+                <input type="text" id="phone" placeholder="(123) - 456 - 7890">
+            </div>
+
+            <div class="input-group">
+                <label for="password">Enter Password:</label>
+                <input type="password" id="password" placeholder="Enter Password">
+            </div>
+
+            <div class="input-group">
+                <label for="confirmPassword">Confirm Password:</label>
+                <input type="password" id="confirmPassword" placeholder="Confirm Password">
+            </div>
+
+            <div class="input-group">
+                <label>Gender:</label>
+                <div class="radio-group">
+                    <input type="radio" name="gender" id="female" value="female">
+                    <label for="female">Female</label>
+                    <input type="radio" name="gender" id="male" value="male">
+                    <label for="male">Male</label>
+                    <input type="radio" name="gender" id="other" value="other">
+                    <label for="other">Other</label>
+                </div>
+            </div>
+
+            <div class="input-group">
+                <label for="ageGroup">Age Group:</label>
+                <select id="ageGroup">
+                    <option value=""></option>
+                    <option value="under21">&lt; 21 years old</option>
+                    <option value="21to25">21 – 25 years old</option>
+                    <option value="26to35">26 – 35 years old</option>
+                    <option value="36to50">36 – 50 years old</option>
+                    <option value="over50">&gt; 50 years old</option>
+                </select>
+            </div>
+
+            <div class="input-group">
+                <label>Favorite Music Genre:</label>
+                <div class="checkbox-group">
+                    <input type="checkbox" id="pop" value="Pop">
+                    <label for="pop">Pop</label>
+                    <input type="checkbox" id="hiphop" value="Hiphop">
+                    <label for="hiphop">Hiphop</label>
+                    <input type="checkbox" id="jazz" value="Jazz">
+                    <label for="jazz">Jazz</label>
+                    <input type="checkbox" id="rock" value="Rock">
+                    <label for="rock">Rock</label>
+                    <input type="checkbox" id="classical" value="Classical Music">
+                    <label for="classical">Classical Music</label>
+                    <input type="checkbox" id="country" value="Country">
+                    <label for="country">Country</label>
+                </div>
+            </div>
+
+            <div class="button-group">
+                <button onclick="validateForm()">Submit</button>
+                <button class="clear-btn" onclick="clearForm()">Clear</button>
+            </div>
+
+        </div>
+
+        <div id="error-box"></div>
+
+        <br>
+        <button class="nav-button">
+            <a href="index.html">Back to Index Page</a>
+        </button>
+    </div>
+
+    <script src="validation.js"></script>
+</body>
+</html>
